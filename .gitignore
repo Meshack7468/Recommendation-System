@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+node_modules/
+*.pyc
+.env
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+*.pkl
+Core/*.pkl
