@@ -1,17 +1,13 @@
-# Recommendation System
+##  Business Understanding
 
-##  Business Overview
+Modern streaming platforms host thousands of movies, which often leaves users overwhelmed by too many choices and trapped in endless scrolling cycles. This makes manual searching tedious  and frustrating, ultimately reducing user satisfaction and engagement.
 
-Movie platforms contain a large collection of films, making it difficult for users to quickly find content that matches their interests. A recommendation system helps improve user experience by suggesting movies that are similar to those a user already enjoys, improving content discovery and engagement.
+Recommendation systems can help solve this problem by simplifying and personalizing the discovery process. Instead of requiring users to browse through large catalogs, the system automatically identifies and suggests relevant movies based on similarity.
 
-This system focuses on building a content-based movie recommendation engine that suggests similar movies using metadata such as genres, keywords, cast, crew, and movie descriptions.
+In this project, a content-based movie recommendation system is developed to improve how users discover films. It works by analyzing key movie features such as genres then using textual similarity techniques to measure how closely related different movies are.
 
+By turning large-scale browsing into instant, relevant suggestions, the system makes movie discovery faster, easier, and more aligned with what the user is likely to enjoy.
 
-##  Business Problem
-
-Users often struggle to find relevant movies due to the large volume of available content. This can lead to decision fatigue, reduced engagement, and a poor browsing experience.
-
-The goal of this system is to solve this problem by recommending movies based on similarity in content features rather than user behavior.
 
 
 ## Data Understanding
