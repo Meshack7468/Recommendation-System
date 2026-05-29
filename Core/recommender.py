@@ -1,8 +1,32 @@
+import os
 import pickle
 
-# Load data (stored locally in Core/)
-movies = pickle.load(open("movies.pkl", "rb"))
-similarity = pickle.load(open("similarity.pkl", "rb"))
+import gdown
+
+# Google Drive file IDs for the large pickle files
+MOVIES_FILE_ID = "1pmBMgtLnU8jNQci75aRmUX95SvPcC2Q4"
+SIMILARITY_FILE_ID = "1TvpvjIfNkZM9g_D7CdItlZCcC3IVkyBf"
+
+MOVIES_PATH = "movies.pkl"
+SIMILARITY_PATH = "similarity.pkl"
+
+
+def _download_if_missing(file_id: str, dest: str) -> None:
+    """Download a file from Google Drive if it doesn't already exist locally."""
+    if not os.path.exists(dest):
+        url = f"https://drive.google.com/uc?id={file_id}"
+        print(f"Downloading {dest} from Google Drive...")
+        gdown.download(url, dest, quiet=False)
+        print(f"Downloaded {dest} successfully.")
+
+
+# Ensure pickle files are present, downloading from Google Drive if needed
+_download_if_missing(MOVIES_FILE_ID, MOVIES_PATH)
+_download_if_missing(SIMILARITY_FILE_ID, SIMILARITY_PATH)
+
+# Load data
+movies = pickle.load(open(MOVIES_PATH, "rb"))
+similarity = pickle.load(open(SIMILARITY_PATH, "rb"))
 
 
 # Return all movie titles
