@@ -7,8 +7,9 @@ import gdown
 MOVIES_FILE_ID = "1pmBMgtLnU8jNQci75aRmUX95SvPcC2Q4"
 SIMILARITY_FILE_ID = "1TvpvjIfNkZM9g_D7CdItlZCcC3IVkyBf"
 
-MOVIES_PATH = "movies.pkl"
-SIMILARITY_PATH = "similarity.pkl"
+DATA_DIR = "/data"
+MOVIES_PATH = os.path.join(DATA_DIR, "movies.pkl")
+SIMILARITY_PATH = os.path.join(DATA_DIR, "similarity.pkl")
 
 
 def _download_if_missing(file_id: str, dest: str) -> None:
@@ -18,7 +19,12 @@ def _download_if_missing(file_id: str, dest: str) -> None:
         print(f"Downloading {dest} from Google Drive...")
         gdown.download(url, dest, quiet=False)
         print(f"Downloaded {dest} successfully.")
+    else:
+        print(f"Found existing file at {dest}, skipping download.")
 
+
+# Ensure the volume mount directory exists
+os.makedirs(DATA_DIR, exist_ok=True)
 
 # Ensure pickle files are present, downloading from Google Drive if needed
 _download_if_missing(MOVIES_FILE_ID, MOVIES_PATH)
