@@ -1,10 +1,10 @@
 ##  Business Understanding
 
-Modern streaming platforms host thousands of movies, which often leaves users overwhelmed by too many choices and trapped in endless scrolling cycles. This makes manual searching tedious  and frustrating, ultimately reducing user satisfaction and engagement.
+Modern streaming platforms host thousands of movies, which often leaves users overwhelmed by too many choices and trapped in endless scrolling cycles. This makes manual searching time-consuming and frustrating, ultimately reducing user satisfaction and engagement.
 
 Recommendation systems can help solve this problem by simplifying and personalizing the discovery process. Instead of requiring users to browse through large catalogs, the system automatically identifies and suggests relevant movies based on similarity.
 
-In this project, a content-based movie recommendation system is developed to improve how users discover films. It works by analyzing key movie features such as genres then using textual similarity techniques to measure how closely related different movies are.
+In this project, a content-based movie recommendation system is developed to improve how users discover films. It works by analyzing key movie features then using textual similarity techniques to measure how closely related different movies are.
 
 By turning large-scale browsing into instant, relevant suggestions, the system makes movie discovery faster, easier, and more aligned with what the user is likely to enjoy.
 
@@ -30,7 +30,7 @@ The following approach was followed:
 - Merging movies datasets
 - Converting text into numerical vectors using vectorization
 - Computing similarity using cosine similarity and generating recommendations 
-- Deployment of the model
+- Models deployment 
 
 
 ## Key Value of the Project
