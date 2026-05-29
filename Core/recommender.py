@@ -1,20 +1,42 @@
+import os
 import pickle
 import pandas as pd
+import gdown
 
-# Load saved dataframe
+
+# Google Drive file IDs
+
+MOVIES_FILE_ID = "1TvpvjIfNkZM9g_D7CdItlZCcC3IVkyBf"
+SIMILARITY_FILE_ID = "1pmBMgtLnU8jNQci75aRmUX95SvPcC2Q4"
+
+# Download helper
+
+def download_file(file_id, output_name):
+    if not os.path.exists(output_name):
+        url = f"https://drive.google.com/uc?id={file_id}"
+        gdown.download(url, output_name, quiet=False)
+
+
+# Download models (Railway-safe)
+
+download_file(MOVIES_FILE_ID, "movies.pkl")
+download_file(SIMILARITY_FILE_ID, "similarity.pkl")
+
+
+# Load data
+
 movies = pickle.load(open('movies.pkl', 'rb'))
-
-# Load similarity matrix
 similarity = pickle.load(open('similarity.pkl', 'rb'))
 
 
 # Return all movie titles
-def get_movie_titles():
 
+def get_movie_titles():
     return movies['title'].tolist()
 
 
 # Recommendation function
+
 def recommend_movies(movie):
 
     # Check if movie exists
@@ -37,7 +59,6 @@ def recommend_movies(movie):
     recommended_movies = []
 
     for i in movies_list:
-
         recommended_movies.append(
             movies.iloc[i[0]].title
         )
