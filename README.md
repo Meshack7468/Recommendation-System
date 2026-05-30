@@ -30,7 +30,12 @@ The following approach was followed:
 - Merging movies datasets
 - Converting text into numerical vectors using vectorization
 - Computing similarity using cosine similarity and generating recommendations 
-- Models deployment 
+- Models deployment
+
+- ## View Notebook
+
+Open this link in NBViewer to view the notebook clearly:
+https://nbviewer.org/github/Meshack7468/Recommendation-System/blob/main/index.ipynb
 
 
 ## Key Value of the Project
@@ -38,8 +43,6 @@ The following approach was followed:
 - Provides personalized movie suggestions based on content
 - Improves movie discovery by reducing search time
 - Enhances user experience through relevant recommendations
-- Scalable to large movie datasets
-
 
 ## Conclusion
 
