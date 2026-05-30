@@ -1,9 +1,10 @@
-const API_URL = import.meta.env.VITE_API_URL ?? "http://127.0.0.1:8000";
+const API_URL =
+  import.meta.env.VITE_API_URL ||
+  "https://recommendation-system-production-2d81.up.railway.app";
 
 function base() {
   return API_URL.replace(/\/$/, "");
 }
-
 
 // GET ALL MOVIES
 export async function getMovies(): Promise<string[]> {
